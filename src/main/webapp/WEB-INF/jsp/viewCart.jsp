@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" isELIgnored="false" %>
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -9,5 +11,14 @@
 <body>
 <h1>View Cart</h1>
 <a href="${flowExecutionUrl}&_eventId=submit">Submit</a>
+<h2>Products for Your Choice</h2>
+<table>
+    <c:forEach var="product" items="${products}">
+        <tr>
+            <td>${product.description}</td>
+            <td>${product.price}</td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>
